@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
+import { React } from 'react';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
 import AuthRouter from './routers/AuthRouter';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <AuthRouter />
+      <Provider store={store}>
+        <AuthRouter />
+      </Provider>
     </>
   );
 }
